@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Child Profile — Kindred Care</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav"><a class="brand" href="index.html"><span
+                    class="brand-mark">K</span><span>kindred<small>CHILD DEVELOPMENT HUB</small></span></a>
+            <nav class="navlinks"><a href="index.html">Home</a><a href="library.html">Knowledge Library</a><a
+                    class="active" href="profile.html">Explore your child</a></nav><a class="btn sm"
+                href="library.html">Knowledge library ↗</a>
+        </div>
+    </header>
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / <a href="profile.html">Explore your child</a> /
+                Child profile</div>
+            <div class="eyebrow">Guided exploration · Step 1</div>
+            <h1>Let's start with a little context.</h1>
+            <p>Share a few basic details so the exploration can be more relevant. You can use a nickname or initials
+                instead of your child's full name.</p>
+        </div>
+    </section>
+    <main class="container page-content">
+        <div class="explore-layout">
+            <aside class="profile-card">
+                <h3>Your exploration journey</h3>
+                <div class="profile-line"><span>01 · Child profile</span><b style="color:var(--blue2)">Current</b></div>
+                <div class="profile-line"><span>02 · Basic questions</span><span>Next</span></div>
+                <div class="profile-line"><span>03 · Follow-up</span><span>Later</span></div>
+                <div class="profile-line"><span>04 · Explore results</span><span>Later</span></div>
+                <div class="notice">You can skip optional questions and choose “Not sure” whenever you do not know an
+                    answer.</div>
+            </aside>
+            <section class="form-card"><span class="pill">Child profile</span>
+                <h2>About the child</h2>
+                <p>These details help provide context for the questions. Only enter information you are comfortable
+                    sharing.</p>
+                <div class="form-grid">
+                    <div class="field"><label for="childname">Child's name or nickname</label><input id="childname"
+                            placeholder="e.g. Aira / A" autocomplete="off"><span class="hint">A nickname or initials are
+                            enough. Avoid entering a full legal name.</span></div>
+                    <div class="field"><label for="age">Age</label><select id="age">
+                            <option value="">Select age range</option>
+                            <option>0–12 months</option>
+                            <option>1–2 years</option>
+                            <option>3–5 years</option>
+                            <option>6–9 years</option>
+                            <option>10–12 years</option>
+                            <option>13–17 years</option>
+                        </select></div>
+                    <div class="field"><label for="gender">Sex (optional)</label><select id="gender">
+                            <option value="">Prefer not to say</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Prefer not to say</option>
+                        </select><span class="hint">Optional; only include if relevant to your exploration.</span></div>
+                    <div class="field"><label for="known">Has the child received a professional
+                            assessment?</label><select id="known">
+                            <option value="">Choose an answer</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Currently in the process</option>
+                            <option>Not sure</option>
+                        </select></div>
+                    <div class="field full"><label for="diagnosis">If yes, is there a condition or assessment result you
+                            would like to explore? (optional)</label><input id="diagnosis"
+                            placeholder="You can leave this blank"></div>
+                </div>
+                <div class="notice">Privacy note: this is a static design prototype. No information entered here is
+                    submitted or stored. In the final application, collection and retention of child-related information
+                    will need clear consent and privacy safeguards.</div>
+                <div class="form-actions"><a class="btn ghost" href="index.html">← Back to home</a><a class="btn"
+                        href="basics.html">Continue to basic questions →</a></div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">Kindred Care · Guided exploration</div>
+    </footer>
+</body>
+
+</html>
