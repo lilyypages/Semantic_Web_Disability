@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Basic Questions — Kindred Care</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="{{ url_for('index') }}">
+      <span class="brand-mark">K</span>
+      <span>kindred<small>CHILD DEVELOPMENT HUB</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('library') }}">Knowledge Library</a>
+      <a class="active" href="{{ url_for('profile') }}">Explore your child</a>
+    </nav>
+    <a class="btn sm" href="{{ url_for('library') }}">Knowledge library ↗</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ url_for('index') }}">Home</a> /
+      <a href="{{ url_for('profile') }}">Explore your child</a> /
+      Basic questions
+    </div>
+    <div class="eyebrow">Guided exploration · Step 2</div>
+    <h1>What have you noticed so far?</h1>
+    <p>These questions help identify which areas may be useful to explore. They are not a screening diagnosis.</p>
+  </div>
+</section>
+
+<main class="container page-content">
+  <div class="explore-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="profile-card">
+      <h3>Exploration progress</h3>
+      <div class="progress-meta"><span>Step 2 of 4</span><span>25%</span></div>
+      <div class="progress"><span style="width:25%"></span></div>
+      <div class="profile-line" style="margin-top:13px">
+        <span>Child profile</span><b style="color:#527c6c">Completed</b>
+      </div>
+      <div class="profile-line"><span>Basic questions</span><b style="color:var(--blue2)">Current</b></div>
+      <div class="profile-line"><span>Follow-up questions</span><span>Next</span></div>
+      <div class="profile-line"><span>Results</span><span>Later</span></div>
+      <div class="notice">Centang area yang ingin Anda eksplorasi. Lalu centang tanda-tanda spesifik yang pernah Anda amati.</div>
+    </aside>
+
+    <!-- FORM -->
+    <section class="form-card">
+      <span class="pill">General development</span>
+      <h2>Which areas would you like to understand better?</h2>
+      <p>Pilih satu atau lebih area. Setelah itu muncul daftar tanda spesifik di bawahnya.</p>
+
+      <!-- AREA CHECKBOX (dari HTML asli Anda) -->
+      <div class="choice-grid" id="areaGrid">
+        <label class="choice">
+          <input type="checkbox" name="area" value="communication">
+          <span><strong>Communication & speech</strong><small>Speaking, understanding, expressing needs</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="hearing">
+          <span><strong>Hearing</strong><small>Responding to sounds and spoken language</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="vision">
+          <span><strong>Vision</strong><small>Seeing objects and navigating visually</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="motor">
+          <span><strong>Movement & motor skills</strong><small>Moving, coordination, physical activities</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="social">
+          <span><strong>Social interaction</strong><small>Connecting and interacting with others</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="learning">
+          <span><strong>Learning & understanding</strong><small>Learning, memory, understanding instructions</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="sensory">
+          <span><strong>Behavior & sensory experiences</strong><small>Behavior, sound, touch, or sensory responses</small></span>
+        </label>
+        <label class="choice">
+          <input type="checkbox" name="area" value="behavior">
+          <span><strong>Behavior & emotional</strong><small>Agresi, membangkang, pola makan</small></span>
+        </label>
+      </div>
+
+      <!-- SIGN CHECKLIST (muncul dinamis dari JS) -->
+      <div class="question" id="signChecklistWrapper" style="display:none">
+        <h3>Specific signs you have noticed</h3>
+        <p>Pilih tanda yang pernah Anda amati. Tidak perlu memilih semua.</p>
+        <div id="signGrid" class="sign-grid"></div>
+      </div>
+
+      <!-- DURASI (dari HTML asli Anda) -->
+      <div class="question">
+        <h3>Has this concern been present for a while?</h3>
+        <p>Choose the answer that feels closest.</p>
+        <div class="inline-options">
+          <label><input type="radio" name="duration" value="recently"> Recently noticed</label>
+          <label><input type="radio" name="duration" value="several_months" checked> For several months</label>
+          <label><input type="radio" name="duration" value="long_time"> For a long time</label>
+          <label><input type="radio" name="duration" value="not_sure"> Not sure</label>
+        </div>
+      </div>
+
+      <!-- SETTINGS (untuk observedSettingsCount) -->
+      <div class="question">
+        <h3>Where do you notice this most? <span class="tagline">Select all that apply</span></h3>
+        <div class="inline-options">
+          <label><input type="checkbox" name="setting" value="home"> At home</label>
+          <label><input type="checkbox" name="setting" value="school"> At school</label>
+          <label><input type="checkbox" name="setting" value="with_other_children"> With other children</label>
+          <label><input type="checkbox" name="setting" value="unfamiliar_places"> In unfamiliar places</label>
+          <label><input type="checkbox" name="setting" value="many_situations"> In many situations</label>
+        </div>
+      </div>
+
+      <!-- RED FLAG -->
+      <div class="question" style="border-color:#f0c9c0;background:#fdf6f4">
+        <h3 style="color:#b85a41">⚠️ Important — always asked</h3>
+        <p>Jawab dengan jujur. Jika ada yang tercentang, sistem akan menandai sebagai red flag.</p>
+        <div id="redFlagGrid" class="sign-grid"></div>
+      </div>
+
+      <!-- FREE TEXT (dari HTML asli) -->
+      <div class="question">
+        <h3>Would you like to add anything else? <span class="tagline">Optional</span></h3>
+        <div class="field">
+          <textarea id="freeText" rows="3" placeholder="Is there anything else you would like us to know?"></textarea>
+        </div>
+      </div>
+
+      <!-- ACTION -->
+      <div class="form-actions">
+        <a class="btn outline" href="{{ url_for('profile') }}">← Previous</a>
+        <button id="analyzeBtn" class="btn" type="button">Analyze →</button>
+      </div>
+      <div class="notice">
+        Hasil analisis bersifat edukatif, bukan diagnosis. Untuk kekhawatiran serius, konsultasikan ke profesional.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer"><div class="container">Kindred Care · Basic questions</div></footer>
+
+<script src="{{ url_for('static', filename='js/basics.js') }}"></script>
+</body>
+</html>
